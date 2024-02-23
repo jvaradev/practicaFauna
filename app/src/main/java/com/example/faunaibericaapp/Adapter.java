@@ -1,5 +1,7 @@
 package com.example.faunaibericaapp;
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +35,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AnimalViewHolder> {
         Animal animal = animalList.get(position);
         holder.imageView.setImageResource(animal.getImageResource());
         holder.textView.setText(animal.getName());
+
+        // Agregar un OnClickListener para abrir DatosAnimalActivity
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DatosActivity.class);
+                intent.putExtra("nombreAnimal", animal.getName());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
