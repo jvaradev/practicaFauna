@@ -15,13 +15,18 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.AnimalViewHolder> {
 
-    private List<Animal> animalList;
+    private static List<Animal> animalList;
     private Context context;
 
     public Adapter(Context context, List<Animal> animalList) {
         this.context = context;
         this.animalList = animalList;
     }
+
+    public static List<Animal> getListaAnimales() {
+        return animalList;
+    }
+
 
     @NonNull
     @Override
