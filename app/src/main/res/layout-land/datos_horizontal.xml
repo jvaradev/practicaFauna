@@ -38,7 +38,7 @@
                 android:id="@+id/textViewNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Datos"
+                android:text="@string/datos"
                 android:textSize="40dp"
                 android:textColor="@android:color/white"
                 android:background="@color/black"/>

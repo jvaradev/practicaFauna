@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">FaunaIbericaApp</string>
+    <string name="fauna">Fauna Ibérica</string>
+    <string name="selecciona">Selecciona lo que quieres consultar</string>
+    <string name="carnivoro">Carnívoros</string>
+    <string name="rapaces">Rapaces y carroñeros</string>
+    <string name="datos">Datos</string>
 </resources>

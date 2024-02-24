@@ -5,10 +5,10 @@
     tools:context=".RapacesActivity">
 
     <TextView
-        android:id="@+id/tituloCarnivoros"
+        android:id="@+id/tituloRapaces"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rapaces"
+        android:text="@string/rapaces"
         android:textSize="24sp"
         android:gravity="center"
         android:padding="16dp"
@@ -19,7 +19,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tituloCarnivoros"
+        android:layout_below="@+id/tituloRapaces"
         android:padding="16dp"
         android:background="#FF5722" />
 

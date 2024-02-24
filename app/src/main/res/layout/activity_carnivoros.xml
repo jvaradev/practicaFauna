@@ -8,7 +8,7 @@
         android:id="@+id/tituloCarnivoros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Carnívoros"
+        android:text="@string/carnivoro"
         android:textSize="24sp"
         android:gravity="center"
         android:padding="16dp"

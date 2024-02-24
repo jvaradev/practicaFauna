@@ -11,7 +11,7 @@
         android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Fauna Ibérica"
+        android:text="@string/fauna"
         android:textSize="30dp"
         android:textColor="@color/white"
         android:background="@color/black"/>
@@ -23,11 +23,11 @@
         android:layout_below="@+id/titulo"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="30dp"
-        android:text="Selecciona lo que quieres consultar"
+        android:text="@string/selecciona"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:textColor="#FF0000"
-        android:background="#2FFF00"
+        android:textColor="#d44938"
+        android:background="#32ff98"
         android:gravity="center_horizontal" />
 
     <RadioGroup
@@ -38,7 +38,7 @@
 
         <RadioButton
             android:id="@+id/radioCarnivoro"
-            android:text="Carnívoros"
+            android:text="@string/carnivoro"
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
 
         <RadioButton
             android:id="@+id/radioRapaces"
-            android:text="Rapaces y Carroñeros"
+            android:text="@string/rapaces"
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
