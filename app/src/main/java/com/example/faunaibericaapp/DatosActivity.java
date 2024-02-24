@@ -25,11 +25,9 @@ public class DatosActivity extends AppCompatActivity {
         // Recibe los datos del intent
         String nombreAnimal = getIntent().getStringExtra("nombreAnimal");
 
-        // Verificar la orientación actual
+        // Verificar la orientación actual y si es una tablet
         int orientation = getResources().getConfiguration().orientation;
-
-        // Seleccionar el diseño según la orientación
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE && isTablet()) {
             setContentView(R.layout.datos_horizontal);
         } else {
             setContentView(R.layout.activity_datos);
@@ -68,6 +66,15 @@ public class DatosActivity extends AppCompatActivity {
                 imagenAnimal.setImageResource(R.drawable.oso);
             }
 
+            // Obtén la lista de animales desde AnimalesProvider (simulado)
+            List<Animal> animalList = Adapter.getListaAnimales();
+
+            // Configura el RecyclerView con la lista de animales
+            LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+            Adapter adapter = new Adapter(this, animalList);
+            recyclerView.setLayoutManager(layoutManager);
+            recyclerView.setAdapter(adapter);
+
         } catch (IOException e) {
             e.printStackTrace();
             // Manejo de error: el archivo no pudo ser abierto o no existe
@@ -88,15 +95,11 @@ public class DatosActivity extends AppCompatActivity {
                 throw new RuntimeException(ex);
             }
         }
+    }
 
-        // Obtén la lista de animales desde AnimalesProvider (simulado)
-        List<Animal> animalList = Adapter.getListaAnimales();
-
-        // Configura el RecyclerView con la lista de animales
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        Adapter adapter = new Adapter(this, animalList);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-
+    private boolean isTablet() {
+        // Determina si el dispositivo es una tablet basándose en la anchura de la pantalla
+        int screenLayout = getResources().getConfiguration().screenLayout;
+        return (screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 }
