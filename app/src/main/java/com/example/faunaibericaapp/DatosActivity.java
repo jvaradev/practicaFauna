@@ -27,7 +27,7 @@ public class DatosActivity extends AppCompatActivity {
 
         // Verificar la orientación actual y si es una tablet
         int orientation = getResources().getConfiguration().orientation;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE && isTablet()) {
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             setContentView(R.layout.datos_horizontal);
         } else {
             setContentView(R.layout.activity_datos);
